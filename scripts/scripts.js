@@ -1,11 +1,11 @@
 //// Etch-a-Sketch Project
 // builds grid of divs and handles logic for events
 
-// Set sketch pad size
+// Set pad size
 const padWidth = 500
 const padHeight = 500
 
-//set number of pixels and height and width. 16 would means a 16x16 grid 
+//set number of pixels and height and width. 16 would mean a 16x16 grid 
 let pixelGridSize = 16
 let pixelBorderWidth = 1 
 let pixelWidth = (padWidth / pixelGridSize) - (pixelBorderWidth * 2) // making sure to subtract the added width from border
@@ -39,3 +39,13 @@ function renderPixels(numOfPixels) {
 }
 
 renderPixels(pixelGridSize * pixelGridSize)
+
+//// Change color when mouse hovers over
+
+// add event listener to padContainer to check for an event on pixels
+padContainer.addEventListener('mouseover', (event) => {
+    //check what target was hit
+    if (event.target.matches('.pixel')){
+        event.target.classList.add('hoverFocusedPixel')
+    }
+})

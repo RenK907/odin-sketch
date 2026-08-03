@@ -4,7 +4,7 @@ body {
 }
 
 #sketchPadContainer {
-    background-color: lightblue;
+    background-color: white;
     margin: 0;
     padding: 0;
     display: flex;
@@ -16,6 +16,10 @@ body {
 }
 
 .pixel {
-    background-color: pink;
+    /* background-color: pink; */
     /* border: 2px solid black; */
+}
+
+.hoverFocusedPixel {
+    background-color: black;
 }
