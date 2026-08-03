@@ -4,9 +4,10 @@
 // Set pad size
 const padWidth = 500
 const padHeight = 500
+const defaultGridSize = 16
 
 //set number of pixels and height and width. 16 would mean a 16x16 grid 
-let pixelGridSize = 16 //defualt size
+let pixelGridSize = defaultGridSize //defualt size
 const pixelBorderWidth = 1 
 
 //// html elements
@@ -68,6 +69,7 @@ changeSizeBtn.addEventListener('click', () => {
 
         //validate input
         if (pixelGridSize === null) { //if canceled
+            pixelGridSize = defaultGridSize //set to a default number if canceled
             break
         }
 
