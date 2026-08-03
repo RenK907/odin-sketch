@@ -22,15 +22,15 @@ padContainer.style.height = `${padHeight}px`
 function renderGrid(container, gridSize) {
     // takes a container and size, creates the elements for the pixels, and renders the grid
 
-    let pixelWidth = (padWidth / gridSize)
-    let pixelHight = (padHeight / gridSize)
+    let pixelWidth = (100 / Math.sqrt(gridSize**2).toFixed(10)) // convert to a percentage for width/height
+    let pixelHeight = (100 / Math.sqrt(gridSize**2).toFixed(10))
 
     // Set up the pixel div
 
     let pixelDiv = document.createElement("div")
     pixelDiv.classList.add('pixel')
-    pixelDiv.style.width = `${pixelWidth}px`
-    pixelDiv.style.height = `${pixelHight}px`
+    pixelDiv.style.width = `${pixelWidth}%`
+    pixelDiv.style.height = `${pixelHeight}%`
     pixelDiv.style.border = `${pixelBorderWidth}px solid black`
 
     // render the correct number of grid divs inside the conatainer
