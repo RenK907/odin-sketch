@@ -63,8 +63,31 @@ function clearGrid(container) {
 let changeSizeBtn = document.querySelector('#btnGridChange')
 changeSizeBtn.addEventListener('click', () => {
 
-    pixelGridSize = prompt("How many pixels per side?") // prompt for new size
+    while (true) { 
+        pixelGridSize = prompt("How many pixels per side?") // prompt for new size
+
+        //validate input
+        if (pixelGridSize === null) { //if canceled
+            break
+        }
+
+        if (pixelGridSize.trim() === "") { //if empty or spaces
+            alert("Please enter a vaule.")
+            continue
+        }
+
+        let number = Number(pixelGridSize)
+
+        if (!Number.isNaN(number) && number <= 100) { //if isn't nan and under 100 move on
+            break
+        }
+
+        alert("Please enter a valid number under 100.")
+
+    }
+
+    
     clearGrid(padContainer) // clear current grid
     renderGrid(padContainer, pixelGridSize) 
-    
+
 })
