@@ -18,6 +18,7 @@ body {
 .pixel {
     /* background-color: pink; */
     /* border: 2px solid black; */
+    box-sizing: border-box;
 }
 
 .hoverFocusedPixel {

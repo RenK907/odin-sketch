@@ -22,8 +22,8 @@ padContainer.style.height = `${padHeight}px`
 function renderGrid(container, gridSize) {
     // takes a container and size, creates the elements for the pixels, and renders the grid
 
-    let pixelWidth = (padWidth / gridSize) - (pixelBorderWidth * 2) // making sure to subtract the added width from border
-    let pixelHight = (padHeight / gridSize) - (pixelBorderWidth * 2)
+    let pixelWidth = (padWidth / gridSize)
+    let pixelHight = (padHeight / gridSize)
 
     // Set up the pixel div
 
@@ -80,7 +80,7 @@ changeSizeBtn.addEventListener('click', () => {
 
         let number = Number(pixelGridSize)
 
-        if (!Number.isNaN(number) && number <= 100) { //if isn't nan and under 100 move on
+        if (!Number.isNaN(number) && number <= 100 && Number.isInteger(number) && number > 0) { //if isn't nan and under 100 move on
             break
         }
 
